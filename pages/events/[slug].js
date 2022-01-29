@@ -1,12 +1,18 @@
-
+import Layout from '../../components/Layout'
+import { useRouter } from 'next/router'
 
 const EventPage = () => {
+    const router = useRouter();
+
+    console.log(router)
+
     return (
-        <div>
+        <Layout>
             <h1>My Event</h1>
-            <p>This is an app to find the latest DJ and other musicail events</p>
-        </div>
+            {/* El nombre asignado al archivo es el nombre del parametro */}
+            <p>{router.query.slug}</p>
+        </Layout>
     );
 };
 
-export default [slug];
+export default EventPage;

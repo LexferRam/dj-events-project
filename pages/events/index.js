@@ -1,8 +1,10 @@
-
+import Layout from '../../components/Layout'
 
 const index = () => {
     return (
-        <>My Events</>
+        <Layout>
+            My Events
+        </Layout>
     );
 };
 

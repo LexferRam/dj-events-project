@@ -1,7 +1,7 @@
-import React from 'react';
+import Layout from '../components/Layout'
 
 const about = () => {
-    return <div>about</div>;
+    return <Layout title='About DJ Events'>about</Layout>;
 };
 
 export default about;
