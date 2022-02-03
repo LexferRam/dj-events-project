@@ -13,6 +13,7 @@ import styles from '@/styles/Form.module.css'
 import ImageUpload from '@/components/ImageUpload'
 
 const EditEventPage = ({evt:{data:{id,attributes}}}) => {
+    console.log(id)
 
     const [values, setValues] = useState({
         name: attributes.name,
@@ -180,11 +181,9 @@ const EditEventPage = ({evt:{data:{id,attributes}}}) => {
 
 export default EditEventPage;
 
-export async function getServerSideProps({params:{id}, req}){
+export async function getServerSideProps({params:{id}}){
     const res = await fetch(`${API_URL}/events/${id}?populate=*`)
     const evt = await res.json()
-
-    console.log(req.headers.cookie)
 
     return {
         props:{

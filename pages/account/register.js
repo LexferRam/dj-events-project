@@ -25,7 +25,10 @@ const RegisterPage = () => {
         }
 
         console.log({username,email, password, passwordConfirm})
+        register({username,email, password, passwordConfirm})
     }
+
+    useEffect(() => error && toast.error(error))
 
     return (
         <Layout title='User Registration'>
@@ -56,7 +59,7 @@ const RegisterPage = () => {
                         <input type="password" name='passwordConfirm' value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)} />
                     </div>
 
-                    <input type="submit" value='Login' className='btn' />
+                    <input type="submit" value='Register' className='btn' />
                 </form>
 
                 <p>Already have an account? <Link href='/account/login'>Login</Link></p>
